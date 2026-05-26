@@ -1,18 +1,7 @@
-# ============================================
-# DOCTOR APPOINTMENT MODULE
-# Add this module into your existing
-# Clinic Management System
-# ============================================
-
 from datetime import datetime
-
 # Store appointments
 appointments = []
-
-
-# ============================================
 # ADD APPOINTMENT
-# ============================================
 def add_appointment():
 
     print("\n========== ADD APPOINTMENT ==========")
@@ -48,13 +37,11 @@ def add_appointment():
     except ValueError:
         print("\nInvalid Date or Time Format!")
 
-
-# ============================================
 # VIEW ALL APPOINTMENTS
-# ============================================
+
 def view_appointments():
 
-    print("\n========== ALL APPOINTMENTS ==========")
+    print("\n ALL APPOINTMENTS ")
 
     if len(appointments) == 0:
         print("No appointments found.")
@@ -64,7 +51,6 @@ def view_appointments():
 
         print(f"""
 Appointment #{index}
---------------------------------
 Patient ID      : {appointment['patient_id']}
 Patient Name    : {appointment['patient_name']}
 Doctor Name     : {appointment['doctor_name']}
@@ -73,14 +59,10 @@ Appointment Time: {appointment['time']}
 Reason          : {appointment['reason']}
 Status          : {appointment['status']}
 """)
-
-
-# ============================================
 # SEARCH APPOINTMENT
-# ============================================
 def search_appointment():
 
-    print("\n========== SEARCH APPOINTMENT ==========")
+    print("\n SEARCH APPOINTMENT ")
 
     patient_name = input("Enter Patient Name: ")
 
@@ -93,7 +75,6 @@ def search_appointment():
             found = True
 
             print(f"""
---------------------------------
 Patient ID      : {appointment['patient_id']}
 Patient Name    : {appointment['patient_name']}
 Doctor Name     : {appointment['doctor_name']}
@@ -107,12 +88,10 @@ Status          : {appointment['status']}
         print("Appointment not found.")
 
 
-# ============================================
 # UPDATE APPOINTMENT STATUS
-# ============================================
 def update_appointment_status():
 
-    print("\n========== UPDATE STATUS ==========")
+    print("\n UPDATE STATUS ")
 
     patient_name = input("Enter Patient Name: ")
 
@@ -168,7 +147,7 @@ def appointment_menu():
     while True:
 
         print("""
-========== DOCTOR APPOINTMENT SYSTEM ==========
+DOCTOR APPOINTMENT SYSTEM 
 1. Add Appointment
 2. View Appointments
 3. Search Appointment
@@ -200,8 +179,5 @@ def appointment_menu():
         else:
             print("Invalid Choice!")
 
-
-
-# CALL THIS FUNCTION FROM MAIN SYSTEM
 
 appointment_menu()
