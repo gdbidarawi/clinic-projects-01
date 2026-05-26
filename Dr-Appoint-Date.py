@@ -4,7 +4,7 @@ appointments = []
 # ADD APPOINTMENT
 def add_appointment():
 
-    print("\n========== ADD APPOINTMENT ==========")
+    print("\n ADD APPOINTMENT ")
 
     patient_id = input("Enter Patient ID: ")
     patient_name = input("Enter Patient Name: ")
