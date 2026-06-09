@@ -46,8 +46,6 @@ class DrugManagement:
                 return
         print("Drug not found.")
 
-
-# Main Program
 manager = DrugManagement()
 
 while True:
