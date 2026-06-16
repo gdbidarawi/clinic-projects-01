@@ -1,0 +1,43 @@
+CREATE TABLE patients (
+    patient_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT NOT NULL,
+    age INTEGER,
+    gender TEXT,
+    phone TEXT,
+    address TEXT,
+    registration_date DATE
+);
+
+CREATE TABLE doctors (
+    doctor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    doctor_name TEXT NOT NULL,
+    specialization TEXT,
+    phone TEXT,
+    email TEXT
+);
+
+CREATE TABLE appointments (
+    appointment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    patient_id INTEGER,
+    doctor_id INTEGER,
+    appointment_date DATE,
+    appointment_time TEXT,
+    status TEXT DEFAULT 'Scheduled',
+    FOREIGN KEY(patient_id) REFERENCES patients(patient_id),
+    FOREIGN KEY(doctor_id) REFERENCES doctors(doctor_id)
+);
+
+CREATE TABLE inventory (
+    item_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_name TEXT,
+    quantity INTEGER,
+    unit_price REAL,
+    expiry_date DATE
+);
+
+CREATE TABLE reports (
+    report_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    report_type TEXT,
+    generated_date DATE,
+    generated_by TEXT
+);
